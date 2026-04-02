@@ -22,6 +22,9 @@ def chat_view(request):
     return render(request, 'chat.html', {'conversation': conversation, 'messages': messages})
 
 
+
+
+
 def chat(request):
     conversation = Conversation.objects.first()
     messages = conversation.messages.order_by('timestamp') if conversation else []
